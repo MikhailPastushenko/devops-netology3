@@ -33,7 +33,7 @@ https://github.com/MikhailPastushenko/lighthouse-role/blob/main/README.md
 
 ![img_7.png](img_7.png)
 
-##### 9. Переработайте playbook на использование roles. Не забудьте про зависимости lighthouse и возможности совмещения roles с tasks ####
+#### 9. Переработайте playbook на использование roles. Не забудьте про зависимости lighthouse и возможности совмещения roles с tasks ####
 
 ![img_8.png](img_8.png)
 
