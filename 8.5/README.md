@@ -1,4 +1,26 @@
+## Домашнее задание к занятию 5 «Тестирование roles» ##
 
+#### 1. Установите molecule: pip3 install "molecule==3.5.2" ####
+
+![img.png](img.png)
+
+#### 2. Выполните docker pull aragast/netology:latest — это образ с podman, tox и несколькими пайтонами (3.7 и 3.9) внутри. ####
+
+![img_1.png](img_1.png)
+
+### Molecule ###
+
+#### 1. Запустите molecule test -s centos_7 внутри корневой директории clickhouse-role, посмотрите на вывод команды. Данная команда может отработать с ошибками, это нормально. Наша цель - посмотреть как другие в реальном мире используют молекулу. ####
+
+![img_2.png](img_2.png)
+
+#### 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи molecule init scenario --driver-name docker ####
+
+![img_3.png](img_3.png)
+
+#### 3. Добавьте несколько разных дистрибутивов (centos:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть. ####
+
+![img_5.png](img_5.png)
 
 ```
 root@Ubuntu1:/home/mikhail/PycharmProjects/ansible8.4/roles/vector-role# molecule test
@@ -183,3 +205,41 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0    s
 
 INFO     Pruning extra files from scenario ephemeral directory
 ```
+
+ #### 4. Добавьте несколько assert в verify.yml-файл для проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). ####
+
+![img_6.png](img_6.png)
+
+#### 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно. ####
+
+### Tox ###
+
+#### 1. Добавьте в директорию с vector-role файлы из директории. ####
+
+![img_7.png](img_7.png)
+
+#### 2. Запустите docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе. ####
+
+![img_10.png](img_10.png)
+
+#### 3. Внутри контейнера выполните команду tox, посмотрите на вывод ####
+
+![img_9.png](img_9.png)
+
+Получаю ошибку. Пробовал по рекомендациям в интернете переустановить molecula-driver и т.д. - не помогает.
+
+![img_11.png](img_11.png)
+
+#### 4. Создайте облегчённый сценарий для molecule с драйвером molecule_podman. Проверьте его на исполнимость. ####
+
+![img_12.png](img_12.png)
+
+#### 5. правильную команду в tox.ini, чтобы запускался облегчённый сценарий. ####
+
+![img_13.png](img_13.png)
+
+#### 6.Запустите команду tox. Убедитесь, что всё отработало успешно. ####
+
+Получаю ту же ошибку
+
+![img_14.png](img_14.png)
