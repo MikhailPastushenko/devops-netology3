@@ -37,5 +37,5 @@ Jira почему-то позволяет создать только задач
 
 #### 6.Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow приложите к решению задания. ####
 
-
+https://github.com/MikhailPastushenko/devops-netology3/blob/main/9.1/classic%20default%20workflow.xml
 

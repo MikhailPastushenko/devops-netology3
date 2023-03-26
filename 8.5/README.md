@@ -243,3 +243,4 @@ INFO     Pruning extra files from scenario ephemeral directory
 Получаю ту же ошибку
 
 ![img_14.png](img_14.png)
+
