@@ -50,6 +50,6 @@
 
 #### 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл ScriptedJenkinsfile ####
 
-https://github.com/MikhailPastushenko/9.4/blob/main/Jenkinsfile
+https://github.com/MikhailPastushenko/devops-netology3/blob/main/9.4/ScriptedJenkinsFile
 
 ![img_11.png](img_11.png)
