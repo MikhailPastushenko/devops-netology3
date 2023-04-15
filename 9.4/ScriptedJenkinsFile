@@ -1,0 +1,30 @@
+properties(
+    [
+        parameters([
+            booleanParam(defaultValue: false, name: 'prod_run', description: 'Run With Flags --check and --diff ')
+        ])
+    ]
+)
+node("linux"){
+    stage("Git checkout"){
+        git credentialsId: 'mikhail_githib_cred', url: 'git@github.com:aragastmatb/example-playbook.git'
+                             
+    }
+    stage("Sample define secret_check"){
+        secret_check=true
+    }
+    stage("Run playbook"){
+        if (secret_check){
+            if (params.prod_run){
+                sh 'ansible-playbook site.yml -i inventory/prod.yml --check --diff'
+            }
+            else{
+                sh 'ansible-playbook site.yml -i inventory/prod.yml'
+            }
+        }
+        else{
+            echo 'need more action'
+        }
+        
+    }
+}
