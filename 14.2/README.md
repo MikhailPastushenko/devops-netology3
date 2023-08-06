@@ -28,6 +28,8 @@
 
 ![img_10.png](img_10.png)
 
+Результат выполнения _ansible-playbook -i inventory/mycluster/hosts.yaml cluster.yml -b -K -v_
+
 ![img_12.png](img_12.png)
 
 ![img_13.png](img_13.png)
